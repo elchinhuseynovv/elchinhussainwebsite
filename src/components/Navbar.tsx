@@ -22,6 +22,13 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, toggleMenu, activeSection, 
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
+            <div className="flex items-center">
+              <img 
+                src="/alien-logo.png" 
+                alt="Alien Logo" 
+                className="h-10 w-10 mr-2"
+              />
+            </div>
             <h1 className="text-xl md:text-2xl font-bold tracking-wider text-white">
               <span className="cursor-pointer" onClick={() => scrollToSection('home')}>
                 ELCHIN HUSSAIN

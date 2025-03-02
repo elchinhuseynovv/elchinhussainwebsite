@@ -19,61 +19,61 @@ const Portfolio: React.FC = () => {
   const portfolioItems: PortfolioItem[] = [
     {
       id: 1,
-      title: "Piano Session - Munich",
+      title: "Warsaw in a Parallel Reality II",
       type: "photo",
-      thumbnail: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      thumbnail: "https://cdn.myportfolio.com/b84b95c1-3275-4bee-81b6-596b771556d8/18a9e7d7-9b59-49a5-9022-212c9c3a8d99_rw_1920.jpg?h=f5c9c06d086e8c2a376ef30e50015752&url=aHR0cHM6Ly9taXItczMtY2RuLWNmLmJlaGFuY2UubmV0L3Byb2plY3RfbW9kdWxlcy9zb3VyY2UvYTE3ZjAxMjE4OTU3NjUxLjY3YWEzYWQ3MzhhY2YuanBn",
       description: "A quiet moment at the piano, exploring new melodies and ambient textures."
     },
     {
       id: 2,
-      title: "Studio Recording",
+      title: "Warsaw in a Parallel Reality",
       type: "photo",
-      thumbnail: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      thumbnail: "https://cdn.myportfolio.com/b84b95c1-3275-4bee-81b6-596b771556d8/fbe4e9b3-0588-49f5-a19e-eb1f7ea275e9_rw_1920.png?h=1ec774ce7cdf01eb8d0249d84f77da73",
       description: "Recording session for the 'Endless Sky, Little Dreams' EP."
     },
     {
       id: 3,
-      title: "Music Video - 'Yesterday's Dream'",
-      type: "video",
-      thumbnail: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      title: "shiny summer in Bergen auf Rügen'",
+      type: "photo",
+      thumbnail: "https://cdn.myportfolio.com/b84b95c1-3275-4bee-81b6-596b771556d8/0c64cb90-c52d-4100-832d-b8405f3ac86f_rw_1920.jpg?h=c80e6a71d0570adc1e255d842f5ce2fe",
       description: "Official music video for 'Yesterday's Dream', featuring atmospheric visuals and piano performance.",
-      videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-recording-music-in-a-studio-with-technicians-and-musicians-14177-large.mp4"
+      videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-man-playing-piano-in-a-studio-42525-large.mp4"
     },
     {
       id: 4,
-      title: "Handpan Performance",
+      title: "first part of my Laupheim tour...",
       type: "photo",
-      thumbnail: "https://images.unsplash.com/photo-1445985543470-41fba5c3144a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      thumbnail: "https://cdn.myportfolio.com/b84b95c1-3275-4bee-81b6-596b771556d8/768357b1-d21d-41e2-aff6-0d2d23f186e9_rw_1920.jpg?h=a96118024aea615d5bd0962e0a270a2a",
       description: "Exploring the unique sounds of the handpan for the 'Sari Gelin' cover."
     },
     {
       id: 5,
-      title: "Live Performance Highlights",
-      type: "video",
-      thumbnail: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      title: "iconic architecture meets innovation (bmw)",
+      type: "photo",
+      thumbnail: "https://cdn.myportfolio.com/b84b95c1-3275-4bee-81b6-596b771556d8/30339022-48cc-4435-a738-c582e53c0812_rw_1920.jpg?h=7a20142afe209914031c44cbd556c62e",
       description: "Highlights from a live piano performance in Munich, featuring pieces from recent releases.",
-      videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-man-playing-the-guitar-in-a-band-2480-large.mp4"
+      videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-playing-piano-close-up-42520-large.mp4"
     },
     {
       id: 6,
       title: "Ambient Composition",
       type: "photo",
-      thumbnail: "https://images.unsplash.com/photo-1513883049090-d0b7439799bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      thumbnail: "https://cdn.myportfolio.com/b84b95c1-3275-4bee-81b6-596b771556d8/a60e5161-e1eb-4924-8614-4f9c159606f5_rw_1920.jpg?h=53565f28780d7b25e7892e78078510dd",
       description: "Creating ambient textures and soundscapes in the studio."
     },
     {
       id: 7,
-      title: "Behind the Scenes - 'Luminescence'",
-      type: "video",
-      thumbnail: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      title: "moody day in Warsaw",
+      type: "photo",
+      thumbnail: "https://cdn.myportfolio.com/b84b95c1-3275-4bee-81b6-596b771556d8/6c4296cf-39e0-460f-80fd-3fa0075a81bd_rw_1920.jpg?h=646f60023766215a5c609c3e744d6c68",
       description: "Behind-the-scenes footage from the recording of 'Luminescence' for YouTube.",
-      videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-man-playing-drums-on-stage-1651-large.mp4"
+      videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-musician-playing-a-piano-in-a-recording-studio-39780-large.mp4"
     },
     {
       id: 8,
-      title: "Piano Reflections",
+      title: "Horses",
       type: "photo",
-      thumbnail: "https://images.unsplash.com/photo-1552422535-c45813c61732?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      thumbnail: "https://cdn.myportfolio.com/b84b95c1-3275-4bee-81b6-596b771556d8/08b51499-ffe5-4580-aa78-95978388f559_rw_1920.png?h=31f2b6f2bac57e4b3515f8d133bcd815",
       description: "Contemplative moment at the piano, exploring themes for upcoming compositions."
     }
   ];

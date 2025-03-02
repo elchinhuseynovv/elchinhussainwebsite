@@ -7,6 +7,7 @@ interface Track {
   album: string;
   cover: string;
   audioSrc: string;
+  youtubeUrl?: string;
 }
 
 const MusicSection: React.FC = () => {
@@ -19,43 +20,49 @@ const MusicSection: React.FC = () => {
       id: 1,
       title: "Yesterday's Dream",
       album: "Single (2024)",
-      cover: "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      audioSrc: "https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3"
+      cover: "https://source.boomplaymusic.com/group10/M00/10/13/be7f65cd069b471bbf84d3780bcd7329H3000W3000_464_464.webp",
+      audioSrc: "https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3",
+      youtubeUrl: "https://www.youtube.com/watch?v=UoErgP6lJXM"
     },
     {
       id: 2,
       title: "Endless Sky, Little Dreams",
-      album: "EP (2024)",
-      cover: "https://images.unsplash.com/photo-1598387993281-cecf8b71a8f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      audioSrc: "https://assets.mixkit.co/music/preview/mixkit-hip-hop-02-614.mp3"
+      album: "Single (2024)",
+      cover: "https://source.boomplaymusic.com/group10/M00/09/17/152a266dc346457180f9de6eb9232002H3000W3000_464_464.webp",
+      audioSrc: "https://assets.mixkit.co/music/preview/mixkit-hip-hop-02-614.mp3",
+      youtubeUrl: "https://www.youtube.com/watch?v=om6NySovtUo"
     },
     {
       id: 3,
       title: "Once Upon a Time",
-      album: "Single (2024)",
-      cover: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      audioSrc: "https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3"
+      album: "EP (2024)",
+      cover: "https://source.boomplaymusic.com/group10/M00/08/01/8d6d6b8e14da47b087f0499f6b401df5H3000W3000_464_464.webp",
+      audioSrc: "https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3",
+      youtubeUrl: "https://www.youtube.com/watch?v=-utg-qBldR8"
     },
     {
       id: 4,
       title: "Nocturne",
       album: "Single (2024)",
-      cover: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      audioSrc: "https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3"
+      cover: "https://source.boomplaymusic.com/group10/M00/06/26/c37251eddf0048ac993a1bfae041df24_464_464.webp",
+      audioSrc: "https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3",
+      youtubeUrl: "https://www.youtube.com/watch?v=JFAlk86Gue4"
     },
     {
       id: 5,
       title: "It Could Be My Dreams",
-      album: "EP (2024)",
-      cover: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      audioSrc: "https://assets.mixkit.co/music/preview/mixkit-deep-urban-623.mp3"
+      album: "Single (2024)",
+      cover: "https://source.boomplaymusic.com/group10/M00/06/22/5cbae3dac0f740a2a5dffc4195a3939b_464_464.webp",
+      audioSrc: "https://assets.mixkit.co/music/preview/mixkit-deep-urban-623.mp3",
+      youtubeUrl: "https://www.youtube.com/watch?v=r2TLpZoB7Ug"
     },
     {
       id: 6,
       title: "Luminescence",
-      album: "YouTube Release",
-      cover: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      audioSrc: "https://assets.mixkit.co/music/preview/mixkit-a-very-happy-christmas-51.mp3"
+      album: "Single (2024)",
+      cover: "https://source.boomplaymusic.com/group10/M00/02/01/c4c0510896c0416ba372494e218486aaH3000W3000_464_464.webp",
+      audioSrc: "https://assets.mixkit.co/music/preview/mixkit-a-very-happy-christmas-51.mp3",
+      youtubeUrl: "https://www.youtube.com/watch?v=uJ4vJAyOHvs"
     }
   ];
 
@@ -78,6 +85,13 @@ const MusicSection: React.FC = () => {
         setIsPlaying(false);
         setCurrentTrack(null);
       });
+    }
+  };
+
+  const openYoutubeLink = (track: Track, event: React.MouseEvent) => {
+    event.stopPropagation();
+    if (track.youtubeUrl) {
+      window.open(track.youtubeUrl, '_blank');
     }
   };
 
@@ -104,16 +118,28 @@ const MusicSection: React.FC = () => {
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <button 
-                  onClick={() => handlePlay(track)}
-                  className="w-16 h-16 rounded-full bg-electric-blue flex items-center justify-center text-black"
-                >
-                  {currentTrack?.id === track.id && isPlaying ? (
-                    <Pause size={28} />
-                  ) : (
-                    <Play size={28} className="ml-1" />
+                <div className="flex space-x-4">
+                  <button 
+                    onClick={() => handlePlay(track)}
+                    className="w-12 h-12 rounded-full bg-electric-blue flex items-center justify-center text-black"
+                  >
+                    {currentTrack?.id === track.id && isPlaying ? (
+                      <Pause size={24} />
+                    ) : (
+                      <Play size={24} className="ml-1" />
+                    )}
+                  </button>
+                  {track.youtubeUrl && (
+                    <button 
+                      onClick={(e) => openYoutubeLink(track, e)}
+                      className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                      </svg>
+                    </button>
                   )}
-                </button>
+                </div>
               </div>
             </div>
             <div className="p-4">

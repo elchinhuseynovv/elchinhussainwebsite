@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
           poster="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
         >
           <source
-            src="https://assets.mixkit.co/videos/preview/mixkit-recording-music-in-a-studio-with-technicians-and-musicians-14177-large.mp4"
+            src="https://assets.mixkit.co/videos/preview/mixkit-man-playing-piano-in-a-studio-42525-large.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
