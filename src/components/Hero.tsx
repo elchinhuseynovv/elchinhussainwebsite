@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
           muted
           playsInline
           className="object-cover h-full w-full"
-          poster="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
+          poster="https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
         >
           <source
             src="https://assets.mixkit.co/videos/preview/mixkit-man-playing-piano-in-a-studio-42525-large.mp4"

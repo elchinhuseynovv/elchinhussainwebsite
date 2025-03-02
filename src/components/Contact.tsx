@@ -102,8 +102,8 @@ const Contact: React.FC = () => {
               
               <div className="flex items-center">
                 <Phone className="text-electric-blue mr-4" size={20} />
-                <a href="tel:+12345678900" className="text-gray-300 hover:text-white transition-colors">
-                  +1 (234) 567-8900
+                <a href="tel:+48452911266" className="text-gray-300 hover:text-white transition-colors">
+                  +48 452 911 266
                 </a>
               </div>
             </div>
@@ -114,7 +114,7 @@ const Contact: React.FC = () => {
             
             <div className="flex space-x-4">
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/elchinhussain/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-800 transition-colors"
@@ -141,7 +141,7 @@ const Contact: React.FC = () => {
               </a>
               
               <a 
-                href="https://open.spotify.com/artist/6a1XwXtJ3MzICsG0SmHtMv" 
+                href="https://open.spotify.com/artist/1QXfWcjFLSE93RMwLu9Ucb" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-800 transition-colors"
