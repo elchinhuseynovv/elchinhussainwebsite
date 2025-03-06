@@ -37,10 +37,11 @@ body {
 
 /* Logo container to maintain aspect ratio */
 .logo-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .logo-container img {
@@ -48,6 +49,8 @@ body {
   width: 100%;
   height: 100%;
   aspect-ratio: 1/1;
+  position: relative;
+  z-index: 2;
 }
 
 /* Animations */
@@ -87,46 +90,89 @@ body {
 }
 
 /* Sparkle effect */
-@keyframes sparkle {
-  0%, 100% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  20%, 80% {
-    opacity: 1;
-    transform: scale(1);
-  }
+.logo-sparkle {
+  position: relative;
 }
 
 .logo-sparkle::before,
 .logo-sparkle::after {
   content: '';
   position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--electric-blue) 0%, transparent 70%);
-  animation: sparkle 1.5s ease-in-out;
-  z-index: -1;
+  width: 90%;
+  height: 110%;
+  top: -5%;
+  left: 5%;
+  background: radial-gradient(
+    ellipse at center,
+    var(--electric-blue) 0%,
+    rgba(0, 255, 255, 0.3) 30%,
+    transparent 70%
+  );
+  opacity: 0;
+  z-index: 1;
+  mask-image: url('/alien-logo.png');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url('/alien-logo.png');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
 }
 
 .logo-sparkle::before {
-  top: -5px;
-  left: -5px;
-  animation-delay: 0.2s;
+  animation: sparkleOuter 1.5s ease-in-out;
 }
 
 .logo-sparkle::after {
-  bottom: -5px;
-  right: -5px;
-  animation-delay: 0.4s;
+  animation: sparkleInner 1.5s ease-in-out 0.2s;
+  transform: scale(0.9);
+}
+
+@keyframes sparkleOuter {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes sparkleInner {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
 }
 
 .sparkle-overlay {
-  background: radial-gradient(circle at center, transparent 30%, var(--electric-blue) 70%, transparent 100%);
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 20%,
+    var(--electric-blue) 50%,
+    transparent 80%
+  );
   opacity: 0;
   mix-blend-mode: screen;
   animation: sparkleOverlay 1.5s ease-in-out;
+  z-index: 3;
+  pointer-events: none;
+  mask-image: url('/alien-logo.png');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url('/alien-logo.png');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
 }
 
 @keyframes sparkleOverlay {
@@ -134,34 +180,34 @@ body {
     opacity: 0;
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.3;
   }
 }
 
 /* Sparkle particles */
-.logo-sparkle::before,
-.logo-sparkle::after {
-  content: '';
+.logo-sparkle .particle {
   position: absolute;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
+  width: 3px;
+  height: 3px;
   background-color: var(--electric-blue);
+  border-radius: 50%;
   box-shadow: 
     0 0 4px 2px rgba(0, 255, 255, 0.7),
     0 0 8px 4px rgba(0, 255, 255, 0.4);
   opacity: 0;
+  z-index: 3;
+  pointer-events: none;
 }
 
-.logo-sparkle::before {
-  top: 20%;
-  left: 20%;
+.logo-sparkle .particle:nth-child(1) {
+  top: 25%;
+  left: 30%;
   animation: sparkleParticle 1.5s ease-in-out 0.1s;
 }
 
-.logo-sparkle::after {
-  bottom: 20%;
-  right: 20%;
+.logo-sparkle .particle:nth-child(2) {
+  top: 25%;
+  right: 30%;
   animation: sparkleParticle 1.5s ease-in-out 0.3s;
 }
 

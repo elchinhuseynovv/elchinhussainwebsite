@@ -45,10 +45,14 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, toggleMenu, activeSection, 
                     alt="Alien Logo" 
                     className={`w-full h-full object-contain ${isLogoAnimating ? 'logo-pulse' : ''}`}
                   />
+                  {isLogoAnimating && (
+                    <>
+                      <div className="particle"></div>
+                      <div className="particle"></div>
+                      <span className="sparkle-overlay"></span>
+                    </>
+                  )}
                 </div>
-                {isLogoAnimating && (
-                  <span className="absolute top-0 left-0 h-full w-full sparkle-overlay"></span>
-                )}
               </div>
               <h1 className="text-xl md:text-2xl font-bold tracking-wider text-white">
                 ELCHIN HUSSAIN
