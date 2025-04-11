@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
+      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4" >
         <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight">
             ELCHIN HUSSAIN
@@ -54,15 +54,15 @@ const Hero: React.FC = () => {
         </div>
 
         {/* 3D Model */}
-        <div className="mt-12 flex items-center justify-center">
+        <div className="mt-12" style={{ width: '100%', marginBottom: '2.5rem' }}>
           <iframe
             src="https://my.spline.design/robotfollowcursorforlandingpage-4RMQN14PG5tej9LoDPkhRtB6/"
             style={{ 
               border: 'none',
               width: '100%',
-              height: '100%',
-            }}
-          ></iframe>
+              height: '230px',
+            } }
+          />
         </div>
       </div>
 
