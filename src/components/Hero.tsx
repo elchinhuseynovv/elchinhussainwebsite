@@ -54,13 +54,15 @@ const Hero: React.FC = () => {
         </div>
 
         {/* 3D Model */}
-        <div className="mt-12">
+        <div className="mt-12 flex items-center justify-center">
           <iframe
             src="https://my.spline.design/robotfollowcursorforlandingpage-4RMQN14PG5tej9LoDPkhRtB6/"
-            width="100%"
-            height="600px"
-            style={{ border: 'none' }}
-          />
+            style={{ 
+              border: 'none',
+              width: '100%',
+              height: '100%',
+            }}
+          ></iframe>
         </div>
       </div>
 
