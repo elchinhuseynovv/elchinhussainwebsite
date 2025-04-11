@@ -52,6 +52,16 @@ const Hero: React.FC = () => {
             </button>
           </div>
         </div>
+
+        {/* 3D Model */}
+        <div className="mt-12">
+          <iframe
+            src="https://my.spline.design/robotfollowcursorforlandingpage-4RMQN14PG5tej9LoDPkhRtB6/"
+            width="100%"
+            height="600px"
+            style={{ border: 'none' }}
+          />
+        </div>
       </div>
 
       {/* Scroll Indicator */}
